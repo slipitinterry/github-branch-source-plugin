@@ -1095,12 +1095,12 @@ public class GitHubSCMSource extends AbstractGitSCMSource {
                     Connector.release(github);
                 }
             }
-            if (!collaboratorNames.contains(head.getSourceOwner())) {
-                PullRequestSCMRevision rev = (PullRequestSCMRevision) revision;
-                listener.getLogger().format("Loading trusted files from base branch %s at %s rather than %s%n",
-                        head.getTarget().getName(), rev.getBaseHash(), rev.getPullHash());
-                return new SCMRevisionImpl(head.getTarget(), rev.getBaseHash());
-            }
+            // if (!collaboratorNames.contains(head.getSourceOwner())) {
+            //     PullRequestSCMRevision rev = (PullRequestSCMRevision) revision;
+            //     listener.getLogger().format("Loading trusted files from base branch %s at %s rather than %s%n",
+            //             head.getTarget().getName(), rev.getBaseHash(), rev.getPullHash());
+            //     return new SCMRevisionImpl(head.getTarget(), rev.getBaseHash());
+            // }
         }
         return revision;
     }
